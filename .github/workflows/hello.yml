@@ -1,0 +1,12 @@
+name: Hello GitHub Ations
+on:
+  push
+jobs:
+  hello_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: print hello
+        run: echo "Hello, GitHub actions"
