@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 16, 18, 20 ]
+        node: [ 16.x, 18.x, 20.x ]
     name: Node ${{ matrix.node }} sample
     steps:
       - uses: actions/checkout@v5
@@ -17,6 +17,6 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
-      - run: npm ci
+      #- run: npm ci
       - run: npm test
     
