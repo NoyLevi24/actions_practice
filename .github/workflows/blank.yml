@@ -1,0 +1,22 @@
+name: Matrix Testing
+
+on: 
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 16, 18, 20 ]
+    name: Node ${{ matrix.node }} sample
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup node
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+      - run: npm test
+    
