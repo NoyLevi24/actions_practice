@@ -1,0 +1,16 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    networks:
+      - appnet
+
+  redis:
+    image: redis:alpine
+    networks:
+      - appnet
+
+networks:
+  appnet:
+    driver: bridge

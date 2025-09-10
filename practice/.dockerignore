@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Git
+.git
+.git-*
+
+# Local configs and secrets
+.env
+.env.*
+*.local
+*.dev
+*.test
+*.secret
+*.pem
+*.key
+
+# Editor/OS junk
+.vscode/
+.idea/
+.DS_Store
+
+# Logs and temp
+*.log
+logs/
+tmp/
+cache/
+
+# Build artifacts
+dist/
+build/
+out/
+coverage/
+.next/
+target/
