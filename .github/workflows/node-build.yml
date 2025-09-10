@@ -1,0 +1,23 @@
+name: Basic Node.js Build
+
+on:
+  pull_request
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: checkout the repository
+      uses: actions/checkout@v4
+
+    - name: setup Node.js [v18]
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+
+    - name: Installs dependencies (`npm install`)
+      run: npm install
+
+    - name: Runs the build script (`npm run build`)
+      run: npm run build
